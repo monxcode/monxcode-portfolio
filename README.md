@@ -1,14 +1,8 @@
-## LICENSE – PROPRIETARY | ALL RIGHTS RESERVED
+Hi, I’m Mohan Singh Parmar — a developer passionate about Web Development, Cyber Security, and AI-driven solutions.
 
-This project is the exclusive property of Mohan Singh Parmar.
+I enjoy building clean, efficient, and user-focused applications.
+Currently, I’m transitioning into AI for Cybersecurity, exploring how machine learning can enhance modern security systems and threat detection.
 
-You are strictly not allowed to:
-- Use, copy, modify, or reupload any part of this code
-- Include it in any personal, educational, AI, NFT, or commercial project
-- Share, distribute, or rehost this code elsewhere
+I believe in continuous learning, solving real-world problems, and creating projects that reflect creativity, logic, and practical thinking.
 
-This project is shown only for demo and portfolio presentation purposes.
-
-No reuse is permitted under any condition.
-
-For legal contact: parmarmohansingh26@gmail.com
+If you're an experienced professional in Cybersecurity, I’d truly appreciate any advice, guidance, or mentorship you’d like to share. I’m always open to learning from experts and improving my skills.
