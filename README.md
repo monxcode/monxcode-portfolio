@@ -25,7 +25,7 @@ Explore a collection of projects built directly on mobile devices, including:
 - **Modern Calculator**
 - **Smart Tic Tac Toe Game**
 - **Task Scheduler**
-
+- **More visit the Site**
 Each project focuses on functionality, clean UI, and responsive behavior.
 
 ---
