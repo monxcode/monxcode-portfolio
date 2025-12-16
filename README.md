@@ -43,7 +43,7 @@ For inquiries, feedback, or collaboration opportunities, feel free to reach out:
 ---
 
 ## 📍 Location
-**Kumbhalgarh, Rajasthan, India**
+**Udaipur/Kumbhalgarh, Rajasthan, India**
 
 I am continuously learning and growing, with a strong interest in frontend and web development.
 
