@@ -1,22 +1,3 @@
-<!-- 
-  ------------------------------------------------------------
-  © 2025 MONXCODE™ | All Rights Reserved
-  Author: Mohan Singh Parmar
-
-  This project, including all source code, design, UI/UX logic, 
-  and visual elements, is strictly proprietary.
-
-  🚫 Unauthorized use, modification, reproduction, distribution, 
-  or commercial exploitation of any part of this project is 
-  strictly prohibited.
-
-  🔒 No individual or organization is permitted to use this work 
-  in any form without explicit written permission from the author.
-
-  📩 For formal license or permissions, contact:
-     parmarmohansingh26@gmail.com
-  ------------------------------------------------------------
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,186 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MONXCODE - Frontend Developer</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-<style>
-  body.loading-mode {
-    overflow: hidden;
-  }
-
-  #welcomeOverlay {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: linear-gradient(to bottom right, #fdfcff, #e4e7ff);
-    z-index: 9999;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: opacity 0.6s ease;
-  }
-
-  #welcomeOverlay h1 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    font-weight: 700;
-    color: #333;
-  }
-
-  #userName {
-    padding: 12px 18px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    outline: none;
-    min-width: 240px;
-  }
-
-  #enterBtn {
-    margin-top: 20px;
-    padding: 12px 32px;
-    border: none;
-    border-radius: 50px;
-    background: #4f46e5;
-    color: white;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    display: none;
-    position: relative;
-    overflow: hidden;
-    transition: background 0.3s ease;
-  }
-
-  #enterBtn:hover {
-    background: #3730a3;
-  }
-
-  .bubble {
-    position: absolute;
-    bottom: 0;
-    width: 12px;
-    height: 12px;
-    background: #4f46e5;
-    border-radius: 50%;
-    opacity: 0.8;
-    animation: floatUp 2s ease-out forwards;
-    pointer-events: none;
-  }
-
-  @keyframes floatUp {
-    0% {
-      transform: translateY(0) scale(1);
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(-150px) scale(0.6);
-      opacity: 0;
-    }
-  }
-</style>
-
-<script>
-  // Load Overlay
-  window.addEventListener("DOMContentLoaded", () => {
-    document.body.classList.add("loading-mode");
-    document.body.insertAdjacentHTML("afterbegin", `
-      <div id="welcomeOverlay">
-        <h1>Welcome to <span style="color:#4f46e5;">MONXCODE</span></h1>
-        <input type="text" id="userName" placeholder="Enter your name" oninput="checkName()"/>
-        <button id="enterBtn" onclick="triggerBubble()">Enter</button>
-      </div>
-    `);
-  });
-
-  // Name Check
-  function checkName() {
-    const name = document.getElementById("userName").value.trim();
-    document.getElementById("enterBtn").style.display = name ? "inline-block" : "none";
-  }
-
-  // Trigger Bubble & Hide
-  function triggerBubble() {
-    const btn = document.getElementById("enterBtn");
-    for (let i = 0; i < 25; i++) {
-      const bubble = document.createElement("div");
-      bubble.className = "bubble";
-      bubble.style.left = `${Math.random() * 100}%`;
-      bubble.style.width = bubble.style.height = `${Math.random() * 12 + 8}px`;
-      bubble.style.animationDuration = `${Math.random() * 1.5 + 1}s`;
-      btn.appendChild(bubble);
-      setTimeout(() => bubble.remove(), 2000);
-    }
-
-    btn.disabled = true;
-    setTimeout(() => {
-      const overlay = document.getElementById("welcomeOverlay");
-      overlay.style.opacity = "0";
-      overlay.style.pointerEvents = "none";
-      document.body.classList.remove("loading-mode");
-      setTimeout(() => overlay.remove(), 800);
-    }, 1200);
-  }
-</script>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-    :root {
-      --bg: #fff; --text: #333; --card: #fff;
-    }
-    [data-theme="dark"] {
-      --bg: #121212; --text: #eee; --card: #1e1e1e;
-    }
-    body {
-      background: var(--bg); color: var(--text); transition: 0.3s;
-    }
-    header, footer, .section { background: var(--card); transition: 0.3s; }
-    header {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 20px 10%; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
-    .logo { font-weight: 700; font-size: 24px; color: #4f46e5; }
-    nav ul { display: flex; list-style: none; gap: 30px; }
-    nav a { text-decoration: none; color: var(--text); font-weight: 500; transition: 0.3s; }
-    nav a:hover { color: #4f46e5; }
-    .cta { background: #4f46e5; color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: 500; transition: 0.3s; }
-    .cta:hover { background: #3730a3; }
-    .hamburger { display: none; font-size: 24px; cursor: pointer; }
-    .mobile-menu { display: none; flex-direction: column; position: absolute; top: 70px; right: 10%; background: var(--card); padding: 20px; border-radius: 10px; box-shadow: 0 5px 25px rgba(0,0,0,0.1); }
-    .mobile-menu.show { display: flex; }
-    @media (max-width: 768px) {
-      nav ul { display: none; }
-      .hamburger { display: block; }
-    }
-    .hero {
-      padding: 60px 10%; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
-      background: linear-gradient(135deg, #f3f4f6, #fff6f9);
-    }
-    .hero-text { flex: 1; }
-    .hero-text h1 { font-size: 42px; }
-    .hero-text span { color: #4f46e5; }
-    .typing-text { color: #4f46e5; font-weight: 600; font-size: 18px; height: 24px; margin-top: 5px; }
-    .hero-buttons a { margin: 10px 10px 0 0; display: inline-block; }
-    .hero-img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-.hero-img img {
-  max-width: 300px;
-  border-radius: 50%;
-  box-shadow: 0 5px 25px rgba(0,0,0,0.1);
-  padding: 10px;
-  background: radial-gradient(circle at 50% 30%, #dcd7ff, #ffffff);
-  
-  
-  transform: translateX( 0px);  /* left shift: -10px | right shift: +10px */
-  transition: transform 0.3s ease; /* smooth shift effect */
-}
-    .hero-socials { margin-top: 15px; display: flex; gap: 15px; }
-    .hero-socials a { text-decoration: none; font-size: 20px; color: #4f46e5; }
-  </style>
-</head>
+   <link rel="stylesheet" href="style.css">
+  </head>
 <body data-theme="light">
   <header>
     <div class="logo">MONXCODE</div>
@@ -243,13 +46,13 @@
         <path d="M8 0C3.58 0 0 3.58 0 8a8.002 8.002 0 0 0 5.47 7.59c.4.075.55-.175.55-.39v-1.3C4.02 14.09 3.5 12.81 3.5 12.81c-.36-.91-.88-1.15-.88-1.15-.72-.49.05-.48.05-.48.79.06 1.21.81 1.21.81.71 1.2 1.87.85 2.33.65.07-.52.28-.85.5-1.05-2-.22-4.1-1-4.1-4.42 0-.98.35-1.78.92-2.41-.1-.23-.4-1.14.1-2.38 0 0 .75-.24 2.45.92a8.47 8.47 0 0 1 2.22-.3c.75.003 1.5.1 2.22.3 1.7-1.16 2.45-.92 2.45-.92.5 1.24.2 2.15.1 2.38.58.63.92 1.43.92 2.41 0 3.43-2.1 4.2-4.1 4.42.29.25.54.73.54 1.47v2.18c0 .22.15.47.55.39A8.002 8.002 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
       </svg>
     </a>
-    
+
     <a href="https://linkedin.com/in/mohan-singh-parmar-%E2%9B%A8-1135b036b" target="_blank" style="margin: 0 10px; color: inherit;">
       <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" fill="currentColor" viewBox="0 0 24 24">
         <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.75 2.24 5 5 5h14c2.75 0 5-2.25 5-5v-14c0-2.76-2.25-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.28c-.96 0-1.5-.67-1.5-1.5s.54-1.5 1.5-1.5c.96 0 1.5.67 1.5 1.5s-.54 1.5-1.5 1.5zm13.5 11.28h-3v-5.5c0-1.45-.51-2.44-1.79-2.44-.97 0-1.55.65-1.8 1.28-.09.23-.11.56-.11.89v5.77h-3s.04-9.36 0-10.33h3v1.46c.4-.62 1.11-1.5 2.7-1.5 1.98 0 3.47 1.29 3.47 4.07v6.3z"/>
       </svg>
     </a>
-    
+
     <a href="https://instagram.com/ur.mohan_" target="_blank" style="margin: 0 10px; color: inherit;">
       <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" fill="currentColor" viewBox="0 0 24 24">
         <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.333 3.608 1.308.975.975 1.246 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.333 2.633-1.308 3.608-.975.975-2.242 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.333-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.333-2.633 1.308-3.608C4.516 2.496 5.783 2.225 7.149 2.163 8.415 2.105 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.012 7.053.07c-1.675.075-3.255.648-4.472 1.865C.363 3.152-.21 4.732-.285 6.407-.343 7.686-.355 8.095-.355 12s.012 4.314.07 5.593c.075 1.675.648 3.255 1.865 4.472 1.217 1.217 2.797 1.79 4.472 1.865 1.279.058 1.688.07 5.593.07s4.314-.012 5.593-.07c1.675-.075 3.255-.648 4.472-1.865 1.217-1.217 1.79-2.797 1.865-4.472.058-1.279.07-1.688.07-5.593s-.012-4.314-.07-5.593c-.075-1.675-.648-3.255-1.865-4.472-1.217-1.217-2.797-1.79-4.472-1.865C15.314.012 14.905 0 12 0zM12 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/>
@@ -259,12 +62,12 @@
       </div>
     </div>
     <div class="hero-img">
-    <img src="IMG_20250602_120057 (1).jpg" alt="Profile">
+    <img src="home.jpg" alt="Profile">
   </div>
 </div>
-    
+
   </section>
-  
+
   <!-- About Me Section with Slide-Up Only on Scroll --><section id="about" class="about-section reveal-slide" style="padding: 60px 10%; text-align: center;">
   <h2 style="font-size: 32px; margin-bottom: 20px; color: #4f46e5;">About Me</h2>  <div style="max-width: 900px; margin: auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 40px;">
     <div style="flex: 1; min-width: 250px; text-align: center;">
@@ -284,38 +87,6 @@
 </div>
   </div>
 </section>
-<!-- Slide-Up CSS -->
-<style>
-  .reveal-slide {
-    opacity: 0;
-    transform: translateY(80px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .reveal-slide.active {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .slide-img {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease-out;
-  }
-  .slide-img.active {
-    opacity: 1;
-    transform: translateY(0);
-  }
-</style>
-<!-- Scroll Trigger Script -->
-<script>
-  function revealOnScroll() {
-    document.querySelectorAll('.reveal-slide, .slide-img').forEach((el) => {
-      const top = el.getBoundingClientRect().top;
-      if (top < window.innerHeight - 60) el.classList.add('active');
-    });
-  }
-  window.addEventListener('scroll', revealOnScroll);
-  window.addEventListener('load', revealOnScroll);
-</script>
 <!-- Skills Section with Accordion Style -->
 <section class="skills reveal-slide" id="skills" style="padding: 60px 10%;">
   <h2 style="font-size: 32px; text-align: center; margin-bottom: 40px; color: #4f46e5;">My Skills</h2>  <div class="accordion-container" style="max-width: 700px; margin: auto;">
@@ -359,124 +130,12 @@
     </div>
   </div>
 </section>
-<style>
-  .accordion-item {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    overflow: hidden;
-    background: var(--card);
-    transition: all 0.3s ease;
-  }
-  .accordion-title {
-    width: 100%;
-    padding: 15px 20px;
-    font-size: 16px;
-    font-weight: 600;
-    background: #f3f3f3;
-    color: #333;
-    border: none;
-    text-align: left;
-    cursor: pointer;
-    outline: none;
-  }
-  [data-theme="dark"] .accordion-title {
-    background: #252525;
-    color: #eee;
-  }
-  .accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    background: var(--bg);
-    color: var(--text);
-    padding: 0 20px;
-    transition: max-height 0.3s ease, padding 0.3s ease;
-  }
-  .accordion-item.active .accordion-content {
-    max-height: 300px;
-    padding: 15px 20px;
-  }
-</style>
-<script>
-  const accordions = document.querySelectorAll('.accordion-item');
-  accordions.forEach((item) => {
-    item.querySelector('.accordion-title').addEventListener('click', () => {
-      accordions.forEach((el) => {
-        if (el !== item) el.classList.remove('active');
-      });
-      item.classList.toggle('active');
-    });
-  });
-</script>
 <section class="certificate-section" id="certificateSection">
   <h2>My Certificate</h2>
   <div class="certificate-card">
     <img src="Certificate.png" alt="My Certificate's" />
   </div>
 </section>
-
-<style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f9f9f9;
-    height: 300vh; /* Scroll test for height */
-  }
-
-  .certificate-section {
-    padding: 50px 20px;
-    text-align: center;
-    opacity: 0; /* Start में hide */
-    transform: translateY(100px);
-    transition: opacity 1s ease, transform 1s ease;
-    pointer-events: none;
-  }
-
-  .certificate-section.show {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-  }
-
-  .certificate-section h2 {
-    font-size: 36px;
-    color: #007BFF; /* Blue heading */
-    margin-bottom: 30px;
-    font-weight: 600;
-    letter-spacing: 1px;
-  }
-
-  .certificate-card {
-    position: relative;
-    display: inline-block;
-    max-width: 700px;
-    width: 100%;
-    border-radius: 12px;
-    overflow: hidden;
-    z-index: 1;
-    margin: 0 auto;
-    transition: transform 0.4s ease;
-  }
-
-  .certificate-card img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 12px;
-  }
-</style>
-
-<script>
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add('show');
-      }
-    });
-  }, { threshold: 0.3 });
-
-  observer.observe(document.getElementById('certificateSection'));
-</script>
 <!-- Projects Section with Animated Cards --><section id="projects" class="reveal-slide" style="padding: 60px 10%;">
   <h2 style="font-size: 32px; text-align: center; margin-bottom: 40px; color: #4f46e5;">My Projects</h2>  <div class="projects-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;"><div class="project-card animated-card">
   <h3>Modern Calculator</h3>
@@ -512,43 +171,6 @@
         <a href="https://monxcode.github.io/Vynic-eCom/" target="_blank">🛍️Explore!</a>
       </div>
 </section>
-<style>
-  .project-card {
-    background: var(--card);
-    border-radius: 12px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
-  }
-  .project-card h3 {
-    margin-bottom: 10px;
-    color: var(--text);
-  }
-  .project-card p {
-    font-size: 15px;
-    color: var(--text);
-    margin-bottom: 15px;
-  }
-  .project-card a {
-    display: inline-block;
-    text-decoration: none;
-    font-weight: 500;
-    color: #4f46e5;
-    padding: 8px 16px;
-    border: 2px solid #4f46e5;
-    border-radius: 25px;
-    transition: 0.3s;
-  }
-  .project-card a:hover {
-    background: #4f46e5;
-    color: white;
-  }
-</style>
 
 <section class="why-hire-me" id="whyhire" style="padding: 60px 10%; background: var(--card);">
   <h2 style="text-align:center; font-size: 32px; margin-bottom: 40px;">Why Hire Me?</h2>
@@ -575,36 +197,6 @@
     </div>
   </div>
 </section>
-
-<script>
-  const observerWhy = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add('reveal');
-      }
-    });
-  }, { threshold: 0.2 });
-
-  document.querySelectorAll('.reason-box').forEach(box => {
-    box.classList.add('reveal-init');
-    observerWhy.observe(box);
-  });
-</script>
-<style>
-  .reveal-init {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s ease-out;
-  }
-  .reveal {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-  }
-  [data-theme="dark"] .reason-box {
-    background: #1f1f1f;
-    color: #eee;
-  }
-</style>
 <section id="testimonials" style="padding: 60px 10%; background: var(--card);">
   <h2 style="text-align:center; font-size: 32px; margin-bottom: 40px;">What Client Say</h2>
   <div class="testimonial-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
@@ -718,49 +310,6 @@
     <button onclick="closePasswordBox()" style="background:none; color:gray; border:none; font-size:14px; text-decoration:underline; cursor:pointer;">Cancel</button>
   </div>
 </div>
-
-<!-- 🔐 JS Logic -->
-<script>
-  function openPasswordBox() {
-    document.getElementById("passwordPopup").style.display = "flex";
-  }
-
-  function closePasswordBox() {
-    document.getElementById("passwordPopup").style.display = "none";
-  }
-
-  function checkPassword() {
-    const pass = document.getElementById("passwordInput").value;
-    if (pass === "monxadmin") {
-      document.getElementById("passwordPopup").style.display = "none";
-      document.getElementById("testimonialForm").style.display = "block";
-      alert("✅ Access Granted!");
-    } else {
-      alert("❌ Incorrect password!");
-    }
-  }
-
-  // Toggle show/hide password
-  function togglePassword() {
-    const input = document.getElementById("passwordInput");
-    const icon = document.getElementById("eyeIcon");
-    if (input.type === "password") {
-      input.type = "text";
-      icon.innerHTML = `<path d="M12 5c-7 0-11 7-11 7s4 7 11 7c1.7 0 3.2-.4 4.6-1.1l1.4 1.4c-1.8 1-4 1.7-6 1.7-7 0-11-7-11-7s1.5-2.6 4-4.5l1.5 1.5C6.4 12.5 5 14 5 14s4 7 11 7c1.7 0 3.3-.3 4.8-.9l1.5 1.5-1.4 1.4-18-18 1.4-1.4 1.6 1.6C8.2 6.4 10 6 12 6c1.7 0 3.2.4 4.6 1.1L18 5.7C16.2 4.6 14.2 4 12 4c-2 0-4 .4-5.8 1.2L5.5 3.9C7.3 2.8 9.6 2 12 2c7 0 11 7 11 7s-4 7-11 7c-1.6 0-3.2-.4-4.6-1.1l-1.5-1.5C5.8 15.6 7 16 8 16c3 0 5-2 5-5 0-1.2-.4-2.2-1-3Z"/>`;
-    } else {
-      input.type = "password";
-      icon.innerHTML = `<path d="M12 5c-7 0-11 7-11 7s4 7 11 7 11-7 11-7-4-7-11-7Zm0 12a5 5 0 1 1 0-10 5 5 0 0 1 0 10Zm0-8a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/>`;
-    }
-  }
-</script>
-
-<!-- ✨ Animation -->
-<style>
-  @keyframes popIn {
-    from { transform: scale(0.7); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-  }
-</style>
   </div>
   <p style="font-size: 12px; color: #999; margin-top: 20px; text-align: center;">
   🛡️ This section is <strong>only for client submissions</strong>. Public opinions are not accepted.
@@ -772,41 +321,7 @@
     <p style="font-size: 13px; margin-top: 10px; color: gray;">Note: This is a secured client-only form. Submissions are not public.</p>
   </div>
 </section>
-
-<style>
-  .testimonial-box {
-    background: #f9f9f9;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    font-size: 15px;
-    line-height: 1.6;
-    transition: 0.3s;
-  }
-  .testimonial-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  }
-  .testimonial-box h4 {
-    margin-top: 10px;
-    font-size: 14px;
-    color: #4f46e5;
-  }
-  [data-theme="dark"] .testimonial-box {
-    background: #1f1f1f;
-    color: #ddd;
-  }
-</style>
-<script>
-  function showPasswordPrompt() {
-    const pass = prompt("Enter Admin Password:");
-    if(pass === "monxadmin") {
-      document.getElementById("testimonialForm").style.display = "block";
-    } else {
-      alert("❌ Incorrect password. Access denied.");
-    }
-  }
-</script>
+  
 <!-- ===== CONTACT SECTION ===== -->
 <section class="contact" id="contact" style="padding: 60px 10%; background: var(--card);">
   <h2 style="text-align: center; font-size: 32px; margin-bottom: 40px;">Let's Connect</h2>
@@ -844,34 +359,9 @@
     </p>
   </form>
 </section>
-
-  <script>
-    const roles = ["Frontend Developer", "BCA Student", "Python Learner", "UI & UX Designer"];
-    let roleIndex = 0, charIndex = 0;
-    function typeRole() {
-      const typingDiv = document.getElementById("typing");
-      if (charIndex < roles[roleIndex].length) {
-        typingDiv.textContent += roles[roleIndex].charAt(charIndex);
-        charIndex++;
-        setTimeout(typeRole, 100);
-      } else {
-        setTimeout(() => {
-          typingDiv.textContent = "";
-          charIndex = 0;
-          roleIndex = (roleIndex + 1) % roles.length;
-          typeRole();
-        }, 1200);
-      }
-    }
-    typeRole();
-    function toggleMenu() {
-      document.getElementById("mobileMenu").classList.toggle("show");
-    }
-    
-  </script>
   <!-- ===== FOOTER SECTION ===== -->
 <footer style="background: var(--card); padding: 40px 10%; text-align: center; font-size: 14px; color: var(--text); border-top: 1px solid #e5e5e5;">
-  
+
   <div style="margin-bottom: 20px;">
     <a href="https://github.com/monxcode" target="_blank" style="margin: 0 10px; color: inherit;">
       <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" fill="currentColor" viewBox="0 0 16 16">
@@ -891,5 +381,6 @@
   </div>
   <p style="margin-top: 10px;">© 2025 Mohan Singh Parmar | MONXCODE™ | Powered by Passion & Code 💡 | 📍 Rajsamand, India 🇮🇳</p>
 </footer>
+  <script src="script.js"></script>
   </body>
 </html>
