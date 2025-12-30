@@ -8,13 +8,13 @@ Welcome to **MONXCODE**, a personal portfolio showcasing my journey, skills, and
 
 ---
 
-## 👋 About Me
-I am **Mohan Singh Parmar**, a passionate **BCA student** and the founder of **MONXCODE**.  
+##  About Me
+I am **Mohan Singh Parmar**, a passionate **BCA student** and the Creator of **MONXCODE**.  
 I focus on creating websites and interactive projects using **mobile-based development tools** like **Acode** and **Pydroid 3**, proving that powerful development is possible even on mobile devices.
 
 ---
 
-## 🛠️ Skills
+##  Skills
 - **Frontend:** HTML, CSS, JavaScript  
 - **Programming:** Python  
 - **Design & Layout:** Responsive Design, Flexbox, CSS Grid  
@@ -23,7 +23,7 @@ I focus on creating websites and interactive projects using **mobile-based devel
 
 ---
 
-## 📂 Projects
+##  Projects
 Explore a collection of projects built directly on mobile devices, including:
 - **Modern Calculator**
 - **Smart Tic Tac Toe Game**
@@ -34,19 +34,19 @@ Each project focuses on functionality, clean UI, and responsive behavior.
 
 ---
 
-## 📄 Resume
+##  Resume
 My resume is available online and highlights my skills, projects, and learning journey.  
 You can access it through the **Resume section/link** on the portfolio website.
 
 ---
 
-## 📬 Contact
+##  Contact
 For inquiries, feedback, or collaboration opportunities, feel free to reach out:  
 📧 **Email:** parmarmohansingh26@gmail.com
 
 ---
 
-## 📍 Location
+##  Location
 **Udaipur/Kumbhalgarh, Rajasthan, India**
 
 I am continuously learning and growing, with a strong interest in frontend and web development.
